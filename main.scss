@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+@mixin fullscreen {
+  width: 100%;
+  height: 100vh;
+}
+@mixin position(
+  $position,
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null
+) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+$background: #000;
+$font: #fff;
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  background-color: $background;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  a {
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font: {
+      size: 2rem;
+      weight: 700;
+    }
+    color: $font;
+    margin: 1rem 10%;
+  }
+
+  nav {
+    padding: 1rem 10%;
+    .toggle {
+      position: relative;
+      width: 4rem;
+      height: 0.3rem;
+      border-radius: 4px;
+      background-color: $font;
+
+      &::after,
+      &::before {
+        content: "";
+        position: absolute;
+        @extend .toggle;
+      }
+
+      &::after {
+        transform: translateY(0.7rem);
+      }
+
+      &::before {
+        transform: translateY(-0.7rem);
+      }
+    }
+  }
+}
+
+section {
+  @include fullscreen();
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.bird {
+  @include position(absolute, $bottom: 0, $right: 100px);
+  max-height: 80%;
+}
+
+.content {
+  max-width: 600px;
+  border: 1px solid red;
+  padding: 10px 5%;
+  h2 {
+    color: $font;
+    font: {
+      size: 4.2rem;
+      weight: 400;
+    }
+    line-height: 0.8;
+    span {
+      font: {
+        size: 12rem;
+        weight: 900;
+      }
+      letter-spacing: 5px;
+    }
+  }
+
+  p {
+    font: {
+      size: 1.2rem;
+    }
+    color: $font;
+  }
+}

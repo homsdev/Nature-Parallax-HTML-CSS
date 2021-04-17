@@ -43,6 +43,7 @@ header nav .toggle, header nav .toggle::after, header nav .toggle::before {
   height: 0.3rem;
   border-radius: 4px;
   background-color: #fff;
+  cursor: pointer;
 }
 
 header nav .toggle::after, header nav .toggle::before {
@@ -65,12 +66,6 @@ section {
   height: 100vh;
   position: relative;
   overflow: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .bg {
@@ -93,8 +88,11 @@ section {
 }
 
 .content {
+  position: relative;
   max-width: 600px;
-  border: 1px solid red;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   padding: 10px 5%;
 }
 
@@ -114,5 +112,38 @@ section {
 .content p {
   font-size: 1.2rem;
   color: #fff;
+}
+
+.content a {
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #000;
+  background-color: #fff;
+  border-radius: 2px;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+}
+
+.sci {
+  list-style: none;
+  position: fixed;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  padding: 0;
+  border-radius: 2px;
+  background-color: white;
+}
+
+.sci li {
+  margin: 0.5rem 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /*# sourceMappingURL=main.css.map */

@@ -57,7 +57,7 @@ header {
       height: 0.3rem;
       border-radius: 4px;
       background-color: $font;
-
+      cursor: pointer;
       &::after,
       &::before {
         content: "";
@@ -80,8 +80,6 @@ section {
   @include fullscreen();
   position: relative;
   overflow: hidden;
-  display: flex;
-  align-items: center;
 }
 
 .bg {
@@ -101,8 +99,10 @@ section {
 }
 
 .content {
+  position: relative;
   max-width: 600px;
-  border: 1px solid red;
+  top: 50%;
+  transform: translateY(-50%);
   padding: 10px 5%;
   h2 {
     color: $font;
@@ -125,5 +125,33 @@ section {
       size: 1.2rem;
     }
     color: $font;
+  }
+
+  a {
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $background;
+    background-color: $font;
+    border-radius: 2px;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+  }
+}
+
+.sci {
+  list-style: none;
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0;
+  border-radius: 2px;
+  background-color: white;
+
+  li {
+    margin: 0.5rem 1rem;
+    display: flex;
+    justify-content: center;
   }
 }
